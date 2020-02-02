@@ -10,22 +10,27 @@ Data - shifts of wheels from one iteration - must be published on /wheel_shifts 
 
 
 Launching 
+ 
     To launch node just build this package and run wheel_odom.launch file 
 
-Parameters description
-    config.yaml
-        filter_noisy_wheels - (True/False) works only for robots which wheels can turn along z-axis. leave it as false for robots with differential drive. 
-        noisy_wheels_filter_threshold - works only if above is set to True. It is measure of error, which is defined for every wheel as sum of (Dd / Dt) 
+
+
+config.yaml
+    
+    filter_noisy_wheels - (True/False) works only for robots which wheels can turn along z-axis. leave it as false for robots with differential drive. 
+
+    noisy_wheels_filter_threshold - (float) works only if above is set to True. It is measure of error, which is defined for every wheel as sum of (Dd / Dt) 
                                             Where Dd - relative displacement between this wheel and other wheel
                                                   Dt - distance traveled by wheel in this iteration.
                                         In perfect situation Dd between any two wheels is zero and Dd > 0 means slippage.
                                         If above error is bigger than noisy_wheels_filter_threshold then wheel is considered to be unreliable and is skipped 
                                         in this iteration 
 
-        min_number_of_reliable_wheels - if number of reliable wheels is lower than that then odometry is sent with infinite covariance. Do not set it below 2
+    min_number_of_reliable_wheels - (int) if number of reliable wheels is lower than that then odometry is sent with infinite covariance. Do not set it below 2
     
-    wheels.yaml
-        in this file one can specify location of wheels w.r.t. base_link in the manner shown in that file. Algorithm give no restriction on number or location of wheels. Coordinate frame used in this config is shown below. 
+wheels.yaml
+
+    in this file one can specify location of wheels w.r.t. base_link in the manner shown in that file. Algorithm give no        restriction on number or location of wheels. Coordinate frame used in this config is shown below. 
 
         ############################################
         #       ##              #           ##     # 
