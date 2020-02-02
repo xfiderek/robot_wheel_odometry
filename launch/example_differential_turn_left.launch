@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find robot_wheel_odometry)/launch/wheel_odom.launch" />
+    <node name="turn_left" pkg="robot_wheel_odometry" type="example_differential_turn_left.py" />
+    <node name="rviz" pkg="rviz" type="rviz" />
+</launch>

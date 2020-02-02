@@ -1,0 +1,5 @@
+odom_frame: "odom"
+#SEE README.md for parameters description
+filter_noisy_wheels: False 
+noisy_wheels_filter_threshold: 0.2
+min_number_of_reliable_wheels: 2

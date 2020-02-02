@@ -1,0 +1,9 @@
+<launch>
+	<remap from="/wheel_shifts" to="/wheel_shifts" />
+
+	<node name="wheel_odom" pkg="robot_wheel_odometry" type="main.py" output="screen">
+		<rosparam command="load" file="$(find robot_wheel_odometry)/cfg/wheels.yaml"/>
+		<rosparam command="load" file="$(find robot_wheel_odometry)/cfg/config.yaml"/>
+	</node>
+</launch>
+

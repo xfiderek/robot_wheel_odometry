@@ -1,0 +1,6 @@
+<launch>
+    <include file="$(find robot_wheel_odometry)/launch/wheel_odom.launch" />
+    <node name="drive_straight" pkg="robot_wheel_odometry" type="example_drive_straight.py" />
+    <node name="rviz" pkg="rviz" type="rviz" />
+
+</launch>
