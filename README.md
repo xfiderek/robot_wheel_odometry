@@ -6,7 +6,9 @@ Every length / distance is specified in meters and every angle in radians.
 
 Algorithm is capable of ignoring noisy wheels (only in case of robots which wheels can rotate along z-axis)
 
-Data - shifts of wheels from one iteration - must be published on /wheel_shifts topic as WheelShifts message on which is defined in this package. 
+Data 
+  
+    shifts of wheels from one iteration must be published on /wheel_shifts topic as WheelShifts message which is defined in this package. 
 
 
 Launching 
